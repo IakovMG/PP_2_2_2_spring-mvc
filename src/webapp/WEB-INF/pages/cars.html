@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: medium;
+            min-width: 400px;
+        }
+
+        td, th {
+            padding: 3px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: aliceblue;
+            color: black;
+        }
+
+    </style>
+
 </head>
 <body>
 <div>
-    <table cellspacing="2" border="1" cellpadding="3" width="500">
+    <table>
         <tr>
             <th>ID</th>
             <th>MODEL</th>
             <th>SERIES</th>
         </tr>
         <tr th:each="car : ${cars}">
-            <td align="center"><p th:text="${car.getId()}"></p></td>
-            <td align="center"><p th:text="${car.getModel()}"></p></td>
-            <td align="center"><p th:text="${car.getSeries()}"></p></td>
+            <td><p th:text="${car.getId()}"></p></td>
+            <td><p th:text="${car.getModel()}"></p></td>
+            <td><p th:text="${car.getSeries()}"></p></td>
         </tr>
     </table>
 </div>

@@ -1,8 +1,10 @@
+<!--
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"/>
 </head>
 <body>
 <div>
@@ -16,6 +18,49 @@
             <td align="center"><p th:text="${car.getId()}"></p></td>
             <td align="center"><p th:text="${car.getModel()}"></p></td>
             <td align="center"><p th:text="${car.getSeries()}"></p></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style >
+        table {
+            border-collapse: collapse;
+            margin: 25px ;
+            font-size: medium;
+            min-width: 400px;
+        }
+        td, th {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 2px solid black; /* Параметры рамки */
+            text-align: center;
+            background-color: aliceblue;
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+<div>
+    <table cellpadding="">
+        <tr >
+            <th>ID</th>
+            <th>MODEL</th>
+            <th>SERIES</th>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td ><p th:text="${car.getId()}"></p></td>
+            <td ><p th:text="${car.getModel()}"></p></td>
+            <td ><p th:text="${car.getSeries()}"></p></td>
         </tr>
     </table>
 </div>
